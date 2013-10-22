@@ -8,7 +8,7 @@ do
     case $opt in
         *) 
 	echo 'connecting to '$opt
-	ssh $(whoami)@$(knife node show $opt | grep IP\: | cut -d':' -f2 | tr -d ' ')
+	ssh $(whoami)@$(knife node show $opt | grep IP\: | cut -d':' -f2 | tr -d ' ') ${@:2}
 	break
 	;;
     esac
